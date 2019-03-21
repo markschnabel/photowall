@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@import "semantic-ui";
+
+.navbar {
+  position: sticky;
+  top: 0;
+  border-radius: 0 !important;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px !important;
+  display: flex;
+  justify-content: space-between;
+  margin: auto !important;
+}
+
+// Override semantic-ui menu item styles (used in navbar)
+.item {
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+}
+.item::before {
+  background: none !important;
+  background-color: none !important;
+}

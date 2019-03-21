@@ -148,6 +148,8 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    semantic-ui-sass (2.4.0.1)
+      sass (>= 3.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -194,6 +196,7 @@ DEPENDENCIES
   rails (~> 5.2.2, >= 5.2.2.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  semantic-ui-sass (~> 2.4, >= 2.4.0.1)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
