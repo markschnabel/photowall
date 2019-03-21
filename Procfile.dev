@@ -1,0 +1,4 @@
+# Used to run backend & frontend dev server easily
+# run with: foreman start -f Procfile.dev
+backend: rails s -p 3000
+frontend: ruby ./bin/webpack-dev-server
