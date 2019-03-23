@@ -7,7 +7,6 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -15,13 +14,18 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import Vue from 'vue/dist/vue.esm'
-import App from '../app.vue'
+import Vue from "vue/dist/vue.esm";
+import axios from "axios";
 
-document.addEventListener('DOMContentLoaded', () => {
+import Post from "../components/post";
+import AllPosts from "../components/all-posts";
+
+// Make axios accessible through the prototype "$http" in all components
+Vue.prototype.$http = axios;
+
+document.addEventListener("DOMContentLoaded", () => {
   const app = new Vue({
     el: '[data-behavior="vue"]',
-    components: { App }
-  })
-})
-
+    components: { Post, AllPosts }
+  });
+});

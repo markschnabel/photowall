@@ -17,9 +17,11 @@
 @import "semantic-ui";
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 500;
   border-radius: 0 !important;
+  width: 100%;
 }
 
 .nav-container {
@@ -30,6 +32,10 @@
   margin: auto !important;
 }
 
+.content-wrapper {
+  margin: 5rem 0;
+}
+
 // Override semantic-ui menu item styles (used in navbar)
 .item {
   border-left: solid 1px #ddd;
@@ -38,4 +44,10 @@
 .item::before {
   background: none !important;
   background-color: none !important;
+}
+
+// Override weird side effect of semantic-ui which turned any a tag's background
+// black on hover
+a:hover {
+  background: transparent;
 }
