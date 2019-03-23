@@ -36,6 +36,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Semantic-ui for styling
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.0.1'
 
+# Gems for managing images
+gem "carrierwave", "~> 1.3", ">= 1.3.1" 
+gem 'carrierwave-base64', '~> 2.8'
+gem "mini_magick", "~> 4.9", ">= 4.9.3" 
+gem "fog-aws", "~> 3.4"
+gem "figaro", "~> 1.1", ">= 1.1.1"
+gem "unf", "~> 0.1.4"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
