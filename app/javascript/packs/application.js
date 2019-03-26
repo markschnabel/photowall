@@ -15,6 +15,7 @@
 // const imagePath = (name) => images(name, true)
 
 import Vue from "vue/dist/vue.esm";
+import VueMasonry from 'vue-masonry-css'
 import axios from "axios";
 
 import SinglePost from "../components/posts/single-post";
@@ -23,6 +24,9 @@ import PostForm from "../components/post-form/post-form";
 
 // Make axios accessible through the prototype "$http" in all components
 Vue.prototype.$http = axios;
+
+// Init masonry grid add-on
+Vue.use(VueMasonry);
 
 document.addEventListener("DOMContentLoaded", () => {
   const app = new Vue({

@@ -1,12 +1,16 @@
 <template>
   <div class="wrapper">
+    <h1 class="header"><i class="camera retro icon"></i>Photowall</h1>
+    <p class="tagline">A public image board</p>
     <div v-if="posts && posts.length > 0">
-      <single-post
-        v-for="post in posts"
-        v-bind:post="post"
-        v-bind:posts-base-url="postsBaseUrl"
-        v-bind:key="post.id"
-      />
+      <masonry :cols="{default: 5, 1800: 4, 1200: 3, 900: 2, 600: 1}" :gutter="10">
+        <single-post
+          v-for="post in posts"
+          v-bind:post="post"
+          v-bind:posts-base-url="postsBaseUrl"
+          v-bind:key="post.id"
+        />
+      </masonry>
     </div>
     <div v-else-if="posts && posts.length === 0" class="message-wrapper">
       <div class="ui blue message">
@@ -53,9 +57,19 @@ export default {
 .dimmer {
   z-index: 0 !important; /* Make loader display below navbar*/
 }
+.header {
+  text-align: center;
+  margin-bottom: 2px;
+}
+.tagline {
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+  color: #aaa;
+}
 .message-wrapper {
   max-width: 800px;
-  margin: auto;
+  /* margin: auto; */
   padding: 0 10px;
 }
 .new-post-link {
