@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
     create_table :posts do |t|
       t.string :title
       t.string :image
-      t.string :posted_by, :default => "anonymous"
+      t.string :posted_by
       t.text :caption
 
       t.timestamps

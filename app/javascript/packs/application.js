@@ -17,9 +17,9 @@
 import Vue from "vue/dist/vue.esm";
 import axios from "axios";
 
-import Post from "../components/post";
-import AllPosts from "../components/all-posts";
-import PostForm from "../components/post-form";
+import SinglePost from "../components/posts/single-post";
+import AllPosts from "../components/posts/all-posts";
+import PostForm from "../components/post-form/post-form";
 
 // Make axios accessible through the prototype "$http" in all components
 Vue.prototype.$http = axios;
@@ -27,6 +27,6 @@ Vue.prototype.$http = axios;
 document.addEventListener("DOMContentLoaded", () => {
   const app = new Vue({
     el: '[data-behavior="vue"]',
-    components: { Post, AllPosts, PostForm }
+    components: { SinglePost, AllPosts, PostForm }
   });
 });
