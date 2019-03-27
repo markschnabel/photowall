@@ -1,15 +1,27 @@
 <template>
   <div>
-    <div v-if="this.showSuccessMsg && this.newPostId" class="ui success message">
+    <div v-if="this.showNewPostSuccessMsg && this.postId" class="ui success message">
       <i class="close icon" @click="closeMessage"></i>
       <div class="header">Congratulations!</div>
       <p>
-        Your post was successfully uploaded.
+        Your post was successfully created!
         <a
-          v-bind:href="`${postsBaseUrl}/${this.newPostId}`"
+          v-bind:href="`${postsBaseUrl}/${this.postId}`"
           class="post-link"
         >Click here</a>
         to view it or create another down below.
+      </p>
+    </div>
+    <div v-else-if="this.showUpdateSuccessMsg && this.postId" class="ui success message">
+      <i class="close icon" @click="closeMessage"></i>
+      <div class="header">Congratulations!</div>
+      <p>
+        Your post was successfully updated!
+        <a
+          v-bind:href="`${postsBaseUrl}/${this.postId}`"
+          class="post-link"
+        >Click here</a>
+        to view it or continue modifying it down below.
       </p>
     </div>
     <div v-else-if="this.showUnknownErrorMsg" class="ui error message">
@@ -23,8 +35,9 @@
 <script>
 export default {
   props: {
-    showSuccessMsg: { type: Boolean },
-    newPostId: { type: Number },
+    showNewPostSuccessMsg: { type: Boolean },
+    showUpdateSuccessMsg: { type: Boolean },
+    postId: { type: Number },
     showUnknownErrorMsg: { type: Boolean },
     postsBaseUrl: {
       type: String,

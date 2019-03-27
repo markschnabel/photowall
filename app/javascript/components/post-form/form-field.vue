@@ -4,7 +4,7 @@
     <textarea
       v-if="useTextarea"
       :value="value"
-      @input="$emit('updateField', $event.target.value)"
+      @input="changeField($event)"
       :placeholder="placeholder"
       :name="fieldName"
       :required="isRequired"
@@ -13,15 +13,12 @@
       v-else
       type="text"
       :value="value"
-      @input="$emit('updateField', $event.target.value)"
+      @input="changeField($event)"
       :placeholder="placeholder"
       :name="fieldName"
       :required="isRequired"
     >
-    <p
-      v-if="errorMessage"
-      class="helper-text helper-text-error"
-    >{{ label }} {{ errorMessage }}</p>
+    <p v-if="errorMessage" class="helper-text helper-text-error">{{ label }} {{ errorMessage }}</p>
     <p v-else class="helper-text">{{ helperMessage }}</p>
   </div>
 </template>
@@ -39,7 +36,7 @@ export default {
     isRequired: Boolean
   },
   methods: {
-    updateField(event) {
+    changeField(event) {
       this.$emit(`updateField`, event.target.value);
     }
   }

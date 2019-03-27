@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <message
-      :show-success-msg="this.success"
-      :new-post-id="this.newPostId"
+      :show-new-post-success-msg="this.success"
+      :post-id="this.newPostId"
       :posts-base-url="this.postsBaseUrl"
       :show-unknown-error-msg="this.unknownError"
       v-on:closeMessage="closeMessage()"
@@ -18,7 +18,7 @@
         :value="this.title"
         v-on:updateField="title = $event"
         placeholder="ex: A Big, Giant and Huge Photo"
-        helper-message="Give your post a title (required). Must be between 4-30 characters."
+        helper-message="Give your post a title (required). Must be between 4-20 characters."
         :error-message="this.errors.title"
         isRequired
       />
@@ -62,21 +62,19 @@ export default {
   props: {
     postsBaseUrl: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
     "form-field": FormField,
     "image-dropzone": ImageDropzone,
-    message: Message
+    "message": Message
   },
   data() {
     return {
-      // form fields
       title: "",
       postedBy: "",
       caption: "",
-      // image fields
       image: null,
       filename: null,
 
@@ -84,7 +82,6 @@ export default {
 
       success: false,
       newPostId: null,
-
       errors: {},
       unknownError: false
     };

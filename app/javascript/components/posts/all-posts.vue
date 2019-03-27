@@ -70,8 +70,10 @@ export default {
 }
 .message-wrapper {
   max-width: 800px;
-  /* margin: auto; */
+  margin: auto;
   padding: 0 10px;
+  text-align: center;
+
 }
 .new-post-link {
   text-decoration: underline;

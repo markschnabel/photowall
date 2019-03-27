@@ -1,6 +1,1 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<edit-post-form form-type="edit" :post-data="<%= @post.to_json %>" :posts-base-url="<%= posts_url.to_json %>"></edit-post-form>
