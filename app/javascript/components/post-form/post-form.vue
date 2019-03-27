@@ -18,7 +18,7 @@
         :value="this.title"
         v-on:updateField="title = $event"
         placeholder="ex: A Big, Giant and Huge Photo"
-        helper-message="Give your post a title (required). Must be between 2-30 characters."
+        helper-message="Give your post a title (required). Must be between 4-30 characters."
         :error-message="this.errors.title"
         isRequired
       />
@@ -32,18 +32,20 @@
       <form-field
         label="Name"
         field-name="postedBy"
+        :value="this.postedBy"
         v-on:updateField="postedBy = $event"
         placeholder="ex: Abraham Lincoln"
-        helper-message="Your real name or a screen name. Must be left blank or be between 2-30 characters. Defaults to 'anonymous'."
+        helper-message='Your real name or a screen name. Must be left blank or be between 4-30 characters. Defaults to "anonymous"'
         :error-message="this.errors.posted_by"
       />
       <form-field
         useTextarea
         label="Caption"
         field-name="caption"
+        :value="this.caption"
         v-on:updateField="caption = $event"
         placeholder="ex: This photo is so big. So big, you really don't even get it."
-        helper-message="Describe your photo. Must be left blank or be between 4-280 characters."
+        helper-message='Describe your photo. Must be left blank or be between 4-280 characters. Defaults to "(no caption)"'
         :error-message="this.errors.caption"
       />
       <button class="ui submit button" type="submit">Submit</button>
@@ -133,7 +135,10 @@ export default {
       this.errors = {};
     },
     handleError(err) {
-      console.log(err.response.data);
+      // refresh errors
+      this.errors = {};
+
+      // load in new errors
       if (err.response && err.response.data) {
         for (let [fieldName, errorMessages] of Object.entries(
           err.response.data

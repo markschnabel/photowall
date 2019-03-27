@@ -1,5 +1,4 @@
 <template>
-  <div class="post-wrapper">
     <div class="ui card post">
       <a v-if="postsBaseUrl" v-bind:href="`${postsBaseUrl}/${post.id}`">
         <h3 class="ui header">{{ post.title }}</h3>
@@ -8,11 +7,10 @@
       <img class="ui image" v-bind:src="post.image.url" alt="placeholder">
       <p class="name-and-caption">
         <strong>{{ post.posted_by }}</strong>
-        {{ post.caption }}
+        <span :class="post.caption === '(no caption)' ? 'no-caption' : null">{{ post.caption }}</span>
       </p>
       <p class="created-at">{{ getDateRelativeToPresent(post.created_at) }}</p>
     </div>
-  </div>
 </template>
 
 <script>
@@ -33,9 +31,6 @@ export default {
 </script>
 
 <style scoped>
-.post-wrapper {
-  padding: 25px;
-}
 .post {
   margin: auto;
   margin-top: 2rem;
@@ -54,6 +49,11 @@ a:hover .header {
   padding-bottom: 0;
   margin: 0;
 }
+.no-caption {
+  font-style: italic;
+  color: #bbb;
+  font-size: 0.85rem;
+}
 .created-at {
   font-style: italic;
   color: #aaa;
@@ -64,9 +64,6 @@ a:hover .header {
   padding-top: 0.05rem;
 }
 @media only screen and (max-width: 400px) {
-  .post-wrapper {
-    padding: 0;
-  }
   .post {
     margin-top: 0;
   }

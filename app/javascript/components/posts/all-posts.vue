@@ -3,7 +3,7 @@
     <h1 class="header"><i class="camera retro icon"></i>Photowall</h1>
     <p class="tagline">A public image board</p>
     <div v-if="posts && posts.length > 0">
-      <masonry :cols="{default: 5, 1800: 4, 1200: 3, 900: 2, 600: 1}" :gutter="10">
+      <masonry :cols="{default: 5, 1800: 4, 1200: 3, 900: 2, 600: 1}" :gutter="40">
         <single-post
           v-for="post in posts"
           v-bind:post="post"
@@ -65,6 +65,7 @@ export default {
   font-size: 0.85rem;
   font-style: italic;
   text-align: center;
+  margin-bottom: 35px;
   color: #aaa;
 }
 .message-wrapper {
