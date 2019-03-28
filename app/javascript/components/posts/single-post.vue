@@ -139,12 +139,4 @@ a .title:hover {
 .deleted {
   margin: 50px 0 !important;
 }
-@media only screen and (max-width: 400px) {
-  .post {
-    margin-top: 0;
-  }
-  .card {
-    border-radius: 0 !important;
-  }
-}
 </style>

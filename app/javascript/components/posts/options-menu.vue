@@ -56,7 +56,7 @@ export default {
   background: white;
   border: solid 1px #aaa;
   border-radius: 5px;
-  z-index: 500;
+  z-index: 200;
   width: 110px;
   margin-top: 3px;
   -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
