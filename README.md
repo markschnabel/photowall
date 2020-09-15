@@ -1,5 +1,5 @@
 # Photowall
-Photowall is a public image sharing website, view it live at: https://photowall-minim.herokuapp.com/
+Photowall is a public image sharing website, view it live at: https://markschnabel-photowall.herokuapp.com/
 
 **This site was built and deployed using:** 
 * Ruby on Rails
