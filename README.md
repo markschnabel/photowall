@@ -70,8 +70,8 @@ Running tests is as simple as navigating to the directory you've stored the code
 bundle exec rspec
 ```
 
-## Authors
-* **Mark Schnabel** - *Sole contributor* 
+## Author
+* **Mark Schnabel** 
     * GitHub - [markschnabel](https://github.com/markschnabel)
     * Linked In - [mark-j-schnabel](https://github.com/markschnabel)
     * [mark.schnabel@markschnabel.com](mailto:mark.schnabel@markschnabel.com)
