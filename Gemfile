@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
@@ -37,9 +37,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'semantic-ui-sass', '~> 2.4', '>= 2.4.0.1'
 
 # Gems for managing images
-gem "carrierwave", "~> 1.3", ">= 1.3.1" 
+gem "carrierwave", "~> 1.3", ">= 1.3.1"
 gem 'carrierwave-base64', '~> 2.8'
-gem "mini_magick", "~> 4.9", ">= 4.9.3" 
+gem "mini_magick", "~> 4.9", ">= 4.9.3"
 gem "fog-aws", "~> 3.4"
 gem "figaro", "~> 1.1", ">= 1.1.1"
 gem "unf", "~> 0.1.4"
