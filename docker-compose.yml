@@ -1,0 +1,41 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: photowall_postgres
+    image: postgres:15.1
+    environment:
+      POSTGRES_USER: POSTGRES
+      POSTGRES_PASSWORD: POSTGRES
+      PGDATA: /data/postgres
+    volumes:
+        - postgres:/data/postgres
+    ports:
+      - "${PG_LOCAL_PORT:-5432}:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: photowall_pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@photowall.io
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+        - pgadmin:/var/lib/pgadmin
+
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
