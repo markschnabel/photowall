@@ -1,5 +1,4 @@
 # Photowall
-Photowall is a public image sharing website, view it live at: https://markschnabel-photowall.herokuapp.com/
 
 **This site was built and deployed using:** 
 * Ruby on Rails
@@ -13,7 +12,6 @@ Photowall is a public image sharing website, view it live at: https://markschnab
 * Heroku
 
 # Running the program locally
-*Note:* this guide assumes you have Ruby and Rails installed on your computer
 
 ## Basic setup
 
@@ -27,7 +25,7 @@ account with your own buckets to run the app locally. You can set up an account
 here: https://aws.amazon.com/, once you've done that navigate to the console, select
 S3 and follow the prompts to create a bucket. This application uses two buckets, 
 one for development and another for production. If you would like to mimic this 
-create two buckets. Using the default settings for buckets should be fine.
+create two buckets.
 
 Next, this application uses figaro for credential management. Figaro is already in
 the gem file and should be installed, so if you would like to continue with this pattern
@@ -48,33 +46,25 @@ production:
   AWS_BUCKET: your production bucket's name
 ```
 
-## Run Development
+## Run Development Server
 
+You can start the dev server by running
+```
+rails s
+```
 
-First ensure that you have the foreman gem installed globally on your computer.
-If you do not run: 
+After that the program should now be accessible at: http://localhost:3000 on your computer.
+
+It is also recommended to run the webpack development server alongside it if you are going to change any frontend code as it will enable hot-reloading for all frontend assets. You can do this with the following command:
 ```
-gem install foreman
+bin/webpack-dev-server
 ```
-Foreman is used to start the rails app and the webpack-dev-server (used for hot-reloading Vue on the frontend) at the same time
-without having to open multiple terminal windows. Once you have it installed on your
-computer run:
-```
-foreman start -f Procfile.dev
-```
-The program should now be accessible at: *localhost:3000* on your computer.
 
 ## Run Tests
 Running tests is as simple as navigating to the directory you've stored the code in and running 
 ```
 bundle exec rspec
 ```
-
-## Author
-* **Mark Schnabel** 
-    * GitHub - [markschnabel](https://github.com/markschnabel)
-    * Linked In - [mark-j-schnabel](https://github.com/markschnabel)
-    * [mark.schnabel@markschnabel.com](mailto:mark.schnabel@markschnabel.com)
 
 ## License
  
